@@ -1,0 +1,15 @@
+version: 2
+
+models: 
+  - name: stg_customers
+    description: This model cleans up customer database.
+    columns: 
+      - name: customer_id
+        description: Primary key
+        data_tests: 
+          - unique:
+              config: 
+                description: Ensure no duplicate customer_id exists.
+          - not_null: 
+              config: 
+                description: Ensure all customers have an ID.
